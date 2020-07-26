@@ -92,7 +92,7 @@ for idx, val in enumerate(us_states):
             else:
                 state_dict["new_hospitalizations"].append(new_hospitalizations[i])
    #special case, fixing error from Florida data 
-    if(us_states_codes[idx] == 'FL'):
+    if(us_states_codes[idx] == 'FL') or (us_states_codes[idx]=='HI'):
        state_dict["new_hospitalizations"] = []
        state_dict["hospDates"] = []
 
