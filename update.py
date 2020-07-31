@@ -1,5 +1,5 @@
 # Created by Era Iyer
-# June 2020
+# June 2020 
 # update.py file
 # parses through csv NYT data, creates json file with state, dates, total cases, 
 # new cases, and rolling average cases 
