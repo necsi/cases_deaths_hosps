@@ -131,7 +131,7 @@ function ready(error, data, links, jsonData, selectedIndex) {
   states.enter()
     .append("rect")
     .attr("class", function(d) {
-      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Florida' || d.state == 'Kansas' || d.state == 'Hawaii')){
+      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
      // if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
         var square = d3.select(this);
         square.style("fill", "#f2f2f3")
@@ -147,7 +147,7 @@ function ready(error, data, links, jsonData, selectedIndex) {
       var square = d3.select(this);
       square.classed("active", !square.classed("active"));
       if (square.classed("active")) {  
-        if(selectedIndex != 'Current Hospitalizations' || (d.state != 'Florida' && d.state != 'Kansas' && d.state != 'Hawaii')){
+        if(selectedIndex != 'Current Hospitalizations' || (d.state != 'Kansas' && d.state != 'Hawaii')){
         //if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
           let color = getColor(d.state); //determines appropriate color based on id 
           popUpGraph(d.state, color, selectedIndex, jsonData);      
@@ -194,7 +194,7 @@ function ready(error, data, links, jsonData, selectedIndex) {
       else{ return "12px" }
     })
     .text(function(d) { 
-      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Florida' || d.state == 'Kansas' || d.state == 'Hawaii')){
+      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
       //if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
         return "Not"; 
       }
@@ -221,7 +221,7 @@ function ready(error, data, links, jsonData, selectedIndex) {
       else{ return "12px" }
     })
     .text(function(d) { 
-      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Florida' || d.state == 'Kansas' || d.state == 'Hawaii')){
+      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
       //if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
 
         return "Reported"; 
