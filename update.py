@@ -92,9 +92,9 @@ for idx, val in enumerate(us_states):
             else:
                 state_dict["new_hospitalizations"].append(new_hospitalizations[i])
    #special case, fixing error from Florida data 
-    if(us_states_codes[idx]=='HI') or (us_states_codes[idx] == 'KS'):
-       state_dict["new_hospitalizations"] = []
-       state_dict["hospDates"] = []
+   # if(us_states_codes[idx]=='HI') or (us_states_codes[idx] == 'KS'):
+    #   state_dict["new_hospitalizations"] = []
+     #  state_dict["hospDates"] = []
 
    # for i, case_val in enumerate(state_dict["total_cases"]):
     for i, case_val in enumerate(total_cases_state):

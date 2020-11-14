@@ -131,11 +131,6 @@ function ready(error, data, links, jsonData, selectedIndex) {
   states.enter()
     .append("rect")
     .attr("class", function(d) {
-      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
-     // if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
-        var square = d3.select(this);
-        square.style("fill", "#f2f2f3")
-      }
       return "state " + d.code;
     })
     .attr("x", function(d) { return (d.col-1) * cellSize; })
@@ -147,11 +142,8 @@ function ready(error, data, links, jsonData, selectedIndex) {
       var square = d3.select(this);
       square.classed("active", !square.classed("active"));
       if (square.classed("active")) {  
-        if(selectedIndex != 'Current Hospitalizations' || (d.state != 'Kansas' && d.state != 'Hawaii')){
-        //if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
           let color = getColor(d.state); //determines appropriate color based on id 
           popUpGraph(d.state, color, selectedIndex, jsonData);      
-        }                       
       }
     });
 
@@ -173,61 +165,6 @@ function ready(error, data, links, jsonData, selectedIndex) {
       return d.code; 
     });
         
-
-  var specialLabelsNot = gridMap.selectAll(".specialLabelsNot")
-    .data(selectPub.values, function(d) { return d.code; });
-  
-  specialLabelsNot.enter()
-    .append("text")
-    .attr("x", function(d) {
-      return ((d.col - 1) * cellSize);
-    })
-    .attr("y", function(d) {
-      return ((d.row - 1) * cellSize) + (cellSize*0.6);
-    })
-    .style("text-anchor", "start")
-    .style("font-size", function(d){
-      if(width < 300 || height < 400){ return "5px" }
-      else if(width < 550 || height < 500){ return "7px" }
-      else if(width < 700 || height < 600){ return "9px" }
-      else if(width < 1000 || height < 800){ return "10px" }
-      else{ return "12px" }
-    })
-    .text(function(d) { 
-      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
-      //if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
-        return "Not"; 
-      }
-      else return;
-    });
-
-  var specialLabelReported = gridMap.selectAll(".specialLabelReported")
-    .data(selectPub.values, function(d) { return d.code; });
-
-  specialLabelReported.enter()
-    .append("text")
-    .attr("x", function(d) {
-      return ((d.col - 1) * cellSize);
-    })
-    .attr("y", function(d) {
-      return ((d.row - 1) * cellSize) + (cellSize*0.8);
-    })
-    .style("text-anchor", "start")
-    .style("font-size", function(d){
-      if(width < 300 || height < 400){ return "5px" }
-      else if(width < 550 || height < 500){ return "7px" }
-      else if(width < 700 || height < 600){ return "9px" }
-      else if(width < 1000 || height < 800){ return "10px" }
-      else{ return "12px" }
-    })
-    .text(function(d) { 
-      if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
-      //if(selectedIndex == 'Current Hospitalizations' && (d.state == 'Kansas' || d.state == 'Hawaii')){
-
-        return "Reported"; 
-      }
-      else return;
-    });
 
   var map = gridMap.selectAll(".map")
     .data(selectPub.values, function(d) { return d.code; });
