@@ -8,7 +8,8 @@
 var csv_arr = []; //global array to hold certain state and color values from csv file
 fillArr();  //populates csv array [{state, color},{state, color}, {state, color},...]
 
-var selectOptions = ["Daily New Cases", "Daily New Deaths", "Current Hospitalizations"]
+//var selectOptions = ["Daily New Cases", "Daily New Deaths", "Current Hospitalizations"]
+var selectOptions = ["Daily New Cases", "Daily New Deaths"]
 
 // add the options to the button
 d3.select("#selectButton")
@@ -260,16 +261,16 @@ function popUpGraph(stateName, color, selectedIndex, data) {
     yAxisLabel = 'Daily New Deaths';
     hoverOverText = ' new deaths on ';
   }
-  else if(selectedIndex == 'Current Hospitalizations'){
-    //determine index from JSON corresponding to state name
-    var index = data.findIndex(obj => obj.state==stateName);
-    for(var i = 0; i < data[index].hospDates.length; i++){
-      //pushes date and value into array, similar to x, y coordinates on a graph
-      dataset.push({ x : d3.timeParse("%Y-%m-%d")(data[index].hospDates[i]), y : data[index].new_hospitalizations[i] }); 
-    }
-    yAxisLabel = 'Patients Hospitalized';
-    hoverOverText = ' patients in the hospital on ';
-  }
+  // else if(selectedIndex == 'Current Hospitalizations'){
+  //   //determine index from JSON corresponding to state name
+  //   var index = data.findIndex(obj => obj.state==stateName);
+  //   for(var i = 0; i < data[index].hospDates.length; i++){
+  //     //pushes date and value into array, similar to x, y coordinates on a graph
+  //     dataset.push({ x : d3.timeParse("%Y-%m-%d")(data[index].hospDates[i]), y : data[index].new_hospitalizations[i] }); 
+  //   }
+  //   yAxisLabel = 'Patients Hospitalized';
+  //   hoverOverText = ' patients in the hospital on ';
+  // }
   var x = d3.scaleTime().range([padding, w - padding]);
   var y = d3.scaleLinear().range([h, padding*0.2]);
 
@@ -620,13 +621,13 @@ function populate(x, y, state, color, selectedIndex, data){
       dataset.push({ x : d3.timeParse("%Y-%m-%d")(data[index].dates[i]), y : data[index].avg_deaths[i] }); 
     }
   }
-  else if(selectedIndex == 'Current Hospitalizations'){
-    var index = data.findIndex(obj => obj.state==state);
-    for(var i = 0; i < data[index].hospDates.length; i++){
-      //pushes date and value into array, similar to x, y coordinates on a graph
-      dataset.push({ x : d3.timeParse("%Y-%m-%d")(data[index].hospDates[i]), y : data[index].avg_hospitalizations[i] }); 
-    }
-  }
+  // else if(selectedIndex == 'Current Hospitalizations'){
+  //   var index = data.findIndex(obj => obj.state==state);
+  //   for(var i = 0; i < data[index].hospDates.length; i++){
+  //     //pushes date and value into array, similar to x, y coordinates on a graph
+  //     dataset.push({ x : d3.timeParse("%Y-%m-%d")(data[index].hospDates[i]), y : data[index].avg_hospitalizations[i] }); 
+  //   }
+  // }
 
   var w = cellSize*.85,
       h = cellSize*.85;
