@@ -72,7 +72,7 @@ for idx, val in enumerate(us_states):
     total_cases_state = []
     total_deaths_state = []
     #state_dict = {"state":val, "dates": [], "new_cases": [], "avg_cases": [], "new_deaths": [], "avg_deaths": [], "hospDates": [], "new_hospitalizations": [], "avg_hospitalizations": []}
-        state_dict = {"state":val, "dates": [], "new_cases": [], "avg_cases": [], "new_deaths": [], "avg_deaths": []}
+    state_dict = {"state":val, "dates": [], "new_cases": [], "avg_cases": [], "new_deaths": [], "avg_deaths": []}
 
     for i, states_name in enumerate(states):
         if states[i] == val: 
