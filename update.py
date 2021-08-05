@@ -132,6 +132,8 @@ for idx, val in enumerate(us_states):
 with open('result.json', 'w') as fp:
     json.dump(arr, fp)
 
+print('wrote result.json')
+
 
 #parallel arrays to store json information 
 province = []
@@ -201,3 +203,5 @@ with open('USStateColors.csv', 'w', newline='') as file:
     writer.writeheader()
     for i in range(len(province)):
         writer.writerow({'state': province[i], 'color': setColors[i]})
+
+print('wrote USStates.csv')
