@@ -8,7 +8,7 @@ California,orange
 Colorado,orange
 Connecticut,orange
 District of Columbia,orange
-Delaware,orange
+Delaware,green
 Florida,green
 Georgia,orange
 Guam,orange
@@ -26,10 +26,10 @@ Maine,orange
 Michigan,orange
 Minnesota,orange
 Missouri,orange
-Mississippi,green
+Mississippi,orange
 Montana,orange
 North Carolina,orange
-North Dakota,green
+North Dakota,orange
 Nebraska,orange
 New Hampshire,orange
 New Jersey,orange
@@ -42,13 +42,13 @@ Oregon,orange
 Pennsylvania,orange
 Puerto Rico,orange
 Rhode Island,orange
-South Carolina,green
+South Carolina,orange
 South Dakota,orange
 Tennessee,orange
 Texas,orange
 Utah,orange
 Virginia,orange
-Virgin Islands,green
+Virgin Islands,orange
 Vermont,orange
 Washington,orange
 Wisconsin,orange
