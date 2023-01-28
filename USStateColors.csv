@@ -7,9 +7,9 @@ Arizona,orange
 California,orange
 Colorado,orange
 Connecticut,orange
-District of Columbia,green
+District of Columbia,orange
 Delaware,orange
-Florida,orange
+Florida,green
 Georgia,orange
 Guam,green
 Hawaii,orange
@@ -34,7 +34,7 @@ Nebraska,orange
 New Hampshire,orange
 New Jersey,orange
 New Mexico,orange
-Nevada,green
+Nevada,orange
 New York,orange
 Ohio,orange
 Oklahoma,orange
@@ -44,7 +44,7 @@ Puerto Rico,orange
 Rhode Island,orange
 South Carolina,orange
 South Dakota,orange
-Tennessee,red
+Tennessee,orange
 Texas,orange
 Utah,orange
 Virginia,orange
